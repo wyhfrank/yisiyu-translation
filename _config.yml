@@ -1,15 +1,15 @@
 # Site settings
-title: 易立思翻译
+title: 译思语翻译
 email: translate@elixirenglish.com
 keywords: 翻译,口译,本地化,翻译公司,崇州翻译公司,专业翻译公司,本地化公司
 description: > # this means to ignore newlines until "baseurl:"
-  易立思为您提供最优质的翻译服务！
+  译思语为您提供最优质的翻译服务！
 baseurl: "" # the subpath of your site, e.g. /blog/
 # url: "http://yourdomain.com" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
 # github_username:  jekyll
 
-ga_tracking_id: UA-78608624-5  # Google Analytics Tracking ID
+# ga_tracking_id: UA-78608624-5  # Google Analytics Tracking ID
 
 # Build settings
 markdown: kramdown
