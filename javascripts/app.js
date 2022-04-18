@@ -73,7 +73,7 @@ jQuery(document).foundation();
             submitHandler: function(form) {
                 $.ajax({
                     type: 'POST',
-                    url: 'https://jumprock.co/mail/elixirtrans',
+                    url: 'https://jumprock.co/mail/easytrans',
                     data: $(form).serialize(),
                     success: function(data) {
                         if (data.status.match(/success/)) {
