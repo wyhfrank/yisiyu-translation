@@ -294,3 +294,198 @@ header {
 .mobile-menu-exit {
     animation: slideUp 0.3s ease-out forwards;
 } 
+/* Workflow flowchart */
+.flow-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    width: fit-content;
+    margin: 0 auto 3.5rem;
+    padding: 6px;
+    background: white;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.flow-tab {
+    padding: 10px 18px;
+    white-space: nowrap;
+    border-radius: 9999px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flow-tab:hover {
+    color: var(--button-blue);
+}
+
+.flow-tab[aria-selected="true"] {
+    background-color: var(--button-blue);
+    color: white;
+    box-shadow: 0 6px 14px rgba(48, 100, 205, 0.25);
+}
+
+.flow-panel {
+    animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flow-phase-1 { --phase-color: #6366f1; }
+.flow-phase-2 { --phase-color: #2563eb; }
+.flow-phase-3 { --phase-color: #0ea5e9; }
+
+.flow-phase {
+    position: relative;
+    padding: 2rem;
+    overflow: visible;
+}
+
+/* Colored bar along the top of each phase card */
+.flow-phase::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 16px 16px 0 0;
+    background: var(--phase-color);
+}
+
+.flow-phase:hover {
+    transform: none;
+}
+
+.flow-phase-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px dashed #E5E7EB;
+}
+
+.flow-phase-index {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background-color: color-mix(in srgb, var(--phase-color) 12%, white);
+    color: var(--phase-color);
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.flow-phase-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--phase-color);
+}
+
+.flow-steps {
+    position: relative;
+}
+
+/* Vertical line joining the step numbers */
+.flow-steps::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: linear-gradient(var(--phase-color), color-mix(in srgb, var(--phase-color) 25%, transparent));
+}
+
+.flow-step {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 0.5rem 0;
+}
+
+.flow-num {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    border: 2px solid var(--phase-color);
+    background: white;
+    color: var(--phase-color);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flow-step:hover .flow-num {
+    background-color: var(--phase-color);
+    color: white;
+    transform: scale(1.08);
+}
+
+.flow-label {
+    color: var(--text-primary);
+}
+
+.flow-step-optional .flow-num {
+    border-style: dashed;
+}
+
+.flow-step-optional .flow-label {
+    color: var(--text-secondary);
+}
+
+.flow-tag {
+    padding: 2px 8px;
+    border-radius: 9999px;
+    background-color: #F3F4F6;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+}
+
+/* Arrow between phases: right on desktop, down on mobile */
+.flow-connector {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    background: white;
+    color: var(--button-blue);
+    box-shadow: 0 4px 10px rgba(48, 100, 205, 0.18);
+    left: 50%;
+    bottom: -42px;
+    transform: translateX(-50%) rotate(90deg);
+}
+
+.flow-connector svg {
+    width: 18px;
+    height: 18px;
+}
+
+@media (min-width: 768px) {
+    .flow-tab {
+        padding: 10px 28px;
+    }
+
+    .flow-connector {
+        left: auto;
+        bottom: auto;
+        right: -38px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

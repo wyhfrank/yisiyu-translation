@@ -87,3 +87,16 @@ function createGridPattern() {
 }
 
 createGridPattern(); 
+
+// Workflow tabs (笔译 / 口译)
+const flowTabs = document.querySelectorAll('.flow-tab');
+
+flowTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        flowTabs.forEach(t => {
+            const selected = t === tab;
+            t.setAttribute('aria-selected', selected);
+            document.getElementById(t.getAttribute('aria-controls')).classList.toggle('hidden', !selected);
+        });
+    });
+});
