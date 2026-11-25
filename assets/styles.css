@@ -191,7 +191,8 @@ body {
     color: var(--primary-color);
 }
 
-.nav-link.active {
+.nav-link.active,
+.nav-link.nav-current {
     color: var(--button-blue);
 }
 
@@ -488,4 +489,580 @@ header {
         top: 50%;
         transform: translateY(-50%);
     }
+}
+
+/* Academic services page */
+.academic-hero,
+.academic-cta {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3064cd 55%, #25aaeb 100%);
+}
+
+.academic-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+}
+
+.hero-eyebrow,
+.section-eyebrow {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero-eyebrow {
+    color: #bae6fd;
+    margin-bottom: 1rem;
+}
+
+.section-eyebrow {
+    color: var(--button-blue);
+    margin-bottom: 0.5rem;
+}
+
+.hero-btn {
+    border-radius: 12px;
+    padding: 14px 32px;
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-btn-light {
+    background: white;
+    color: var(--button-blue);
+}
+
+.hero-btn-light:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.2);
+}
+
+.hero-btn-ghost {
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.hero-btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.hero-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.hero-keywords span {
+    padding: 4px 12px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    font-size: 0.8125rem;
+}
+
+/* Research stages */
+.stage-path-wrap {
+    padding: 1.75rem 1.5rem;
+}
+
+.stage-path-wrap:hover {
+    transform: none;
+}
+
+.stage-path {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 0;
+}
+
+.stage-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 9999px;
+    background: color-mix(in srgb, var(--button-blue) 8%, white);
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    white-space: nowrap;
+}
+
+.stage-chip:not(:last-child)::after {
+    content: "→";
+    margin: 0 -2px 0 14px;
+    color: var(--text-muted);
+}
+
+.stage-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 9999px;
+    background: var(--button-blue);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* Service cards */
+.svc-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.svc-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    margin-bottom: 1.25rem;
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--button-blue) 10%, white);
+    color: var(--button-blue);
+}
+
+.line-language .svc-icon {
+    background: color-mix(in srgb, #0ea5e9 12%, white);
+    color: #0284c7;
+}
+
+.svc-points {
+    margin-bottom: 1.5rem;
+}
+
+.svc-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 4px 0;
+    color: var(--text-primary);
+}
+
+.svc-check {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: #10b981;
+}
+
+.kw-groups {
+    margin-top: auto;
+    padding-top: 1.25rem;
+    border-top: 1px dashed #E5E7EB;
+}
+
+.kw-group + .kw-group {
+    margin-top: 0.75rem;
+}
+
+.kw-label {
+    margin-bottom: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.kw-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.kw-tag {
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: #F3F4F6;
+    color: #374151;
+    font-size: 0.8125rem;
+    font-weight: 500;
+}
+
+.line-research .kw-tag {
+    background: color-mix(in srgb, var(--button-blue) 8%, white);
+    color: #1e40af;
+}
+
+.line-language .kw-tag {
+    background: color-mix(in srgb, #0ea5e9 10%, white);
+    color: #075985;
+}
+
+/* Integrity note and teaching formats */
+.integrity-note {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    margin-top: 3rem;
+    padding: 1.75rem;
+    border-radius: 16px;
+    border: 1px solid color-mix(in srgb, #10b981 35%, white);
+    background: color-mix(in srgb, #10b981 6%, white);
+}
+
+.integrity-note .svc-icon {
+    margin-bottom: 0;
+    background: color-mix(in srgb, #10b981 15%, white);
+    color: #059669;
+}
+
+.formats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 2rem;
+}
+
+.formats:hover {
+    transform: none;
+}
+
+.format-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.format-item .svc-icon {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .formats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .formats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.kw-group-labelled {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.kw-group-labelled + .kw-group-labelled {
+    margin-top: 6px;
+}
+
+.kw-group-labelled .kw-label {
+    width: 6.5em;
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+    .stage-path {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .stage-chip:not(:last-child)::after {
+        display: none;
+    }
+}
+
+/* Faculty section (research page) */
+.faculty-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem;
+}
+
+.faculty-card:hover {
+    transform: none;
+}
+
+.discipline-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.discipline-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--button-blue) 7%, white);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.discipline-chip svg {
+    flex-shrink: 0;
+    color: var(--button-blue);
+}
+
+.discipline-chip:last-child {
+    background: #F3F4F6;
+    color: var(--text-secondary);
+}
+
+.discipline-chip:last-child svg {
+    color: var(--text-secondary);
+}
+
+@media (min-width: 1024px) {
+    .faculty-card {
+        grid-template-columns: 3fr 2fr;
+        align-items: center;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .faculty-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .discipline-chip {
+        padding: 10px 12px;
+        white-space: nowrap;
+    }
+}
+
+/* "更多学科" spans the full row under the subject grid */
+.discipline-chip:last-child {
+    grid-column: 1 / -1;
+    justify-content: center;
+}
+
+/* Edtech page */
+.line-edtech .svc-icon {
+    background: color-mix(in srgb, #6366f1 12%, white);
+    color: #4f46e5;
+}
+
+.line-edtech .kw-tag {
+    background: color-mix(in srgb, #6366f1 10%, white);
+    color: #3730a3;
+}
+
+.line-edtech .stage-num {
+    background: #4f46e5;
+}
+
+.client-list .discipline-chip:last-child {
+    grid-column: auto;
+    justify-content: flex-start;
+    background: color-mix(in srgb, var(--button-blue) 7%, white);
+    color: var(--text-primary);
+}
+
+.client-list .discipline-chip:last-child svg {
+    color: var(--button-blue);
+}
+
+.client-list .discipline-chip {
+    white-space: normal;
+}
+
+.pkg-card {
+    padding: 1.75rem;
+}
+
+.pkg-index {
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: color-mix(in srgb, #4f46e5 45%, white);
+}
+
+.pkg-for {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: #F3F4F6;
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+}
+
+/* "Customisable" note under each service list */
+.custom-note {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.25rem;
+    margin-top: 2.5rem;
+    padding: 1.5rem 1.75rem;
+    border-radius: 16px;
+    border: 1px dashed color-mix(in srgb, var(--button-blue) 45%, white);
+    background: color-mix(in srgb, var(--button-blue) 5%, white);
+    text-align: left;
+}
+
+.custom-note .svc-icon {
+    margin-bottom: 0;
+}
+
+.custom-note-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    padding: 10px 18px;
+    border-radius: 10px;
+    background: var(--button-blue);
+    color: white;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-note-link:hover {
+    background: var(--button-hover);
+    transform: translateY(-1px);
+}
+
+.custom-note-text {
+    flex: 1 1 260px;
+}
+
+.cta-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 1.25rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+/* Text logo: emblem + 译思语 Yisiyu + tagline */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-mark {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.brand-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--text-primary);
+}
+
+.brand-en {
+    margin-left: 6px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--button-blue);
+}
+
+.brand-tag {
+    margin-top: 2px;
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+/* Homepage hero brand line and service links */
+.hero-brand-tag {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: clamp(1.375rem, 3.2vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-links a {
+    padding: 6px 16px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 0.9375rem;
+    transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-links a:hover {
+    background: rgba(255, 255, 255, 0.26);
+}
+
+/* 译 / 思 / 语 brand story */
+.brand-story {
+    margin-bottom: 4rem;
+}
+
+.brand-char-card {
+    display: block;
+    padding: 2rem;
+    text-align: center;
+}
+
+.brand-char {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--button-blue), var(--accent-color));
+    color: white;
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+/* Homepage business cards */
+.biz-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.biz-card .kw-list {
+    margin-top: auto;
+}
+
+.biz-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--button-blue);
+    font-weight: 600;
+}
+
+.biz-card:hover .biz-more {
+    gap: 10px;
 }
